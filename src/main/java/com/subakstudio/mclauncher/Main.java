@@ -1,4 +1,4 @@
-package sample;
+package com.subakstudio.mclauncher;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,8 +15,8 @@ public class Main extends Application {
 //        Parent root = FXMLLoader.load(getClass().getResource("/treetable.fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getProtectionDomain().getCodeSource().getLocation());
-        fxmlLoader.setResources(ResourceBundle.getBundle("sample/strings"));
-        Parent root = fxmlLoader.load(getClass().getClassLoader().getResource("sample/main.fxml").openStream());
+        fxmlLoader.setResources(ResourceBundle.getBundle("strings"));
+        Parent root = fxmlLoader.load(getClass().getClassLoader().getResource("main.fxml").openStream());
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();

@@ -7,11 +7,23 @@
  * user guide available at https://docs.gradle.org/2.10/userguide/tutorial_java_projects.html
  */
 
-// Apply the java plugin to add support for Java
-apply plugin: 'java'
-apply plugin: 'application'
+plugins {
+    id "net.franz-becker.gradle-lombok" version "1.5"
+    id 'java'
+    id 'application'
+    id 'groovy'
+}
 
-mainClassName = 'sample.Main'
+// Apply the java plugin to add support for Java
+//apply plugin: 'java'
+//apply plugin: 'application'
+//apply plugin: 'groovy'
+//apply from: 'provided.gradle'
+
+//mainClassName = 'com.subakstudio.mclauncher.Main'
+mainClassName = 'com.subakstudio.mclauncher.Main'
+
+sourceCompatibility = '1.8'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -24,6 +36,21 @@ repositories {
 dependencies {
     // The production code uses the SLF4J logging API at compile time
     compile 'org.slf4j:slf4j-api:1.7.13'
+
+    // sfl4j is just a facade for loggers. To actually get logging to work, you need to
+    // tie it in with some actual implementation, e.g., logback
+    def logbackVersion = '1.1.3'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: logbackVersion
+    compile group: 'ch.qos.logback', name: 'logback-core', version: logbackVersion
+
+    // Lombok for logging
+//    provided "org.projectlombok:lombok:1.16.6"
+
+    // Groovy
+    compile 'org.codehaus.groovy:groovy-all:2.4.5'
+
+    // OkHttp for Http Client
+    compile 'com.squareup.okhttp:okhttp:2.7.0'
 
     // Declare the dependency for your favourite test framework you want to use in your tests.
     // TestNG is also supported by the Gradle Test task. Just change the

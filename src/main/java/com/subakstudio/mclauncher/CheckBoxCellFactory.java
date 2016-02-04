@@ -1,4 +1,4 @@
-package sample;
+package com.subakstudio.mclauncher;
 
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;

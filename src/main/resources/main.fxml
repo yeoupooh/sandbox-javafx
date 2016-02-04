@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -23,7 +33,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="995.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="995.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.subakstudio.mclauncher.Controller">
   <children>
     <MenuBar prefHeight="2.0" prefWidth="720.0" VBox.vgrow="NEVER">
       <menus>
@@ -83,6 +93,12 @@
                   <VBox prefHeight="545.0" prefWidth="491.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                 <Label alignment="CENTER" font="$x1" style="&#10;" text="%label.text.view" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="textFieldUrl" />
+                              <Button fx:id="buttonGo" mnemonicParsing="false" onAction="#buttonGoClicked" text="Go" />
+                           </children>
+                        </HBox>
                         <Button fx:id="button" mnemonicParsing="false" onAction="#buttonClicked" text="Button" />
                         <TabPane prefHeight="498.0" prefWidth="482.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
                           <tabs>
@@ -112,7 +128,7 @@
                                             <columns>
                                               <TableColumn fx:id="enabledCol" editable="true" prefWidth="75.0" text="Enabled">
                                                 <cellValueFactory><PropertyValueFactory property="enabled" /></cellValueFactory>
-                                                <cellFactory><sample.CheckBoxCellFactory /></cellFactory>
+                                                <cellFactory><com.subakstudio.mclauncher.CheckBoxCellFactory /></cellFactory>
                                               </TableColumn>
                                               <TableColumn fx:id="nameCol" prefWidth="250.0" text="Name" />
                                                 <TableColumn fx:id="actionCol" prefWidth="150.0" text="Action" />
@@ -154,6 +170,6 @@
     </HBox>
   </children>
   <stylesheets>
-    <URL value="@/sample/main.css" />
+    <URL value="@/main.css" />
   </stylesheets>
 </VBox>

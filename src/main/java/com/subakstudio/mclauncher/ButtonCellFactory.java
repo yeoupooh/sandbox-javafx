@@ -1,4 +1,4 @@
-package sample;
+package com.subakstudio.mclauncher;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;

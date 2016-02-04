@@ -1,4 +1,4 @@
-package sample;
+package com.subakstudio.mclauncher;
 
 import javafx.beans.Observable;
 import javafx.beans.property.SimpleBooleanProperty;
