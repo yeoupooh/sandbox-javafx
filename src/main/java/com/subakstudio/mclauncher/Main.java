@@ -16,9 +16,9 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getProtectionDomain().getCodeSource().getLocation());
         fxmlLoader.setResources(ResourceBundle.getBundle("strings"));
-        Parent root = fxmlLoader.load(getClass().getClassLoader().getResource("main.fxml").openStream());
+        Parent root = fxmlLoader.load(getClass().getClassLoader().getResource("main2.fxml").openStream());
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setScene(new Scene(root, 1000, 600));
         primaryStage.show();
     }
 
