@@ -104,7 +104,7 @@ public class Controller implements Initializable {
     }
 
     private void setupLogger() {
-        log = Logger.getLogger("Controller");
+        log = Logger.getLogger("ExamplesController");
         ConsoleHandler handler = new ConsoleHandler();
         handler.setLevel(Level.ALL);
         log.addHandler(handler);

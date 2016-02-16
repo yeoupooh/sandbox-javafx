@@ -21,7 +21,7 @@ plugins {
 //apply from: 'provided.gradle'
 
 //mainClassName = 'com.subakstudio.mclauncher.Main'
-mainClassName = 'com.subakstudio.mclauncher.Main'
+mainClassName = 'com.sandbox.javafx.Main'
 
 sourceCompatibility = '1.8'
 
@@ -32,14 +32,21 @@ repositories {
     jcenter()
 }
 
+project.ext {
+    logbackVersion = '1.1.3'
+    jacksonVersion = '2.7.1'
+}
+
 // In this section you declare the dependencies for your production and test code
 dependencies {
+    // Easy Logging
+    compile 'org.projectlombok:lombok:1.16.6'
+
     // The production code uses the SLF4J logging API at compile time
     compile 'org.slf4j:slf4j-api:1.7.13'
 
     // sfl4j is just a facade for loggers. To actually get logging to work, you need to
     // tie it in with some actual implementation, e.g., logback
-    def logbackVersion = '1.1.3'
     compile group: 'ch.qos.logback', name: 'logback-classic', version: logbackVersion
     compile group: 'ch.qos.logback', name: 'logback-core', version: logbackVersion
 
